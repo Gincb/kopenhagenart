@@ -1,0 +1,226 @@
+/* Font */
+
+@font-face {
+    font-family: 'DalaFlodaWeb-RomanNo-2';
+    src: url('DalaFloda/DalaFlodaWeb-RomanNo-2.eot?#iefix') format('embedded-opentype'),  url('DalaFloda/DalaFlodaWeb-RomanNo-2.woff') format('woff'), url('DalaFloda/DalaFlodaWeb-RomanNo-2.ttf')  format('truetype'), url('DalaFloda/DalaFlodaWeb-RomanNo-2.svg#DalaFlodaWeb-RomanNo.2') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "DalaFlodaWeb-RomanNo-2";
+}
+
+/* Navbar */
+
+.navbar {
+    overflow: hidden;
+    position: relative;
+    font-size: 18px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    padding-bottom: 10px;
+}
+
+.navbar-list {
+    position: absolute;
+    height: 100vh;
+    width: 80vw;
+    margin-top: 45px;
+    right: -200px;
+    top: 0;
+    list-style-type: none;
+    background-color: white;
+    display: block;
+}
+
+.nav-links,
+.logo {
+  text-decoration: none;
+  color: black;
+}
+
+.navbar-list li {
+  text-align: center;
+  margin: 15px auto;
+}
+
+.navbar-list :nth-child(1) {
+    margin-top: 50px;
+}
+
+.logo {
+  display: inline-block;
+  font-size: 22px;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+.navbar-toggle {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  cursor: pointer;
+  color: black;
+  font-size: 24px;
+}
+
+.active {
+    right: 0;
+    top: 0;
+    display: block;
+    transition: ease-in .3s;
+}
+
+.active-overflow {
+    overflow: visible;
+}
+
+/* Carousel */
+
+.carousel {
+    position: relative;
+    width: 100vw;
+    margin: auto;
+}
+
+.carousel-open:checked + .carousel-item {
+    position: static;
+    opacity: 100;
+}
+
+.carousel-item {
+    position: absolute;
+    opacity: 0;
+}
+
+.carousel-item img {
+    display: block;
+    width: 100vw;
+    height: 30vh;
+    object-fit: cover;
+}
+
+.carousel-control {
+    color: white;
+    cursor: pointer;
+    display: none;
+    font-size: 40px;
+    height: 40px;
+    line-height: 35px;
+    position: absolute;
+    top: 50%;
+    cursor: pointer;
+    transform: translate(0, -50%);
+    text-align: center;
+    width: 40px;
+    z-index: 10;
+}
+
+.carousel-control.prev {
+    left: 2%;
+}
+
+.carousel-control.next {
+    right: 2%;
+}
+
+.carousel-control:hover {
+    color: #EE6648;
+}
+
+#carousel-1:checked ~ .control-1,
+#carousel-2:checked ~ .control-2,
+#carousel-3:checked ~ .control-3 {
+    display: block;
+}
+
+.carousel-indicators {
+    list-style: none;
+    margin-bottom: -50px;
+    padding: 0;
+    position: absolute;
+    bottom: 2%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 10;
+}
+
+.carousel-indicators li {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.carousel-bullet {
+    color: rgb(224, 224, 224);
+    cursor: pointer;
+    display: block;
+    font-size: 35px;
+}
+
+.carousel-bullet:hover {
+    color: rgb(238, 102, 72);
+}
+
+#carousel-1:checked ~ .control-1 ~ .carousel-indicators li:nth-child(1) .carousel-bullet,
+#carousel-2:checked ~ .control-2 ~ .carousel-indicators li:nth-child(2) .carousel-bullet,
+#carousel-3:checked ~ .control-3 ~ .carousel-indicators li:nth-child(3) .carousel-bullet {
+    color: #EE6648;
+}
+
+/* Media Queries */
+
+@media screen and (min-width: 768px) {
+  .navbar {
+    overflow: visible;
+    position: inherit;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 0;
+    height: 70px;
+    align-items: center;
+  }
+
+  .navbar-list {
+    position: inherit;
+    height: auto;
+    width: auto;
+    display: flex;
+    margin-right: 30px;
+    margin-top: 0;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  .navbar-list li {
+    margin: 0;
+  }
+
+  .navbar-list :nth-child(1) {
+    margin-top: 0;
+}
+
+  .nav-links {
+    margin-left: 40px;
+  }
+
+  .logo {
+    margin-top: 0;
+  }
+
+  .navbar-toggle {
+    display: none;
+  }
+
+  .logo:hover,
+  .nav-links:hover {
+    color: #EE6648;
+  }
+}

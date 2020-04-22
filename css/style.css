@@ -108,10 +108,13 @@ body {
 }
 
 .carousel-control {
+    background-color: #EE6648;
+    padding: 6px 0;
+    border-radius: 50%;
     color: white;
     cursor: pointer;
     display: none;
-    font-size: 40px;
+    font-size: 20px;
     height: 40px;
     line-height: 35px;
     position: absolute;
@@ -132,7 +135,7 @@ body {
 }
 
 .carousel-control:hover {
-    color: #EE6648;
+    color: rgb(235, 235, 235);
 }
 
 #carousel-1:checked ~ .control-1,

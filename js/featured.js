@@ -3,9 +3,19 @@ window.addEventListener('DOMContentLoaded', getData);
 const linkFeatured = "http://colorless.in/wordpress-portfolio/kai/wp-json/wp/v2/event?categories=7&_embed";
 
 function getData() {
-    fetch(linkFeatured)
-        .then(res => res.json())
-        .then(handleData)
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const the_featured_id = urlParams.get("featured_id");
+
+    if(the_featured_id) {
+        fetch("http://colorless.in/wordpress-portfolio/kai/wp-json/wp/v2/event/" + the_featured_id + "?_embed")
+            .then(res => res.json())
+            .then(showFeaturedEvent)
+    } else {
+        fetch(linkFeatured)
+            .then(res => res.json())
+            .then(handleData)
+    }
 }
 
 function handleData(featuredEvents) {
@@ -30,7 +40,15 @@ function showFeaturedEvent(featuredEvent) {
 
     featuredCopy.querySelector(".featured-img-event").src = featuredEvent._embedded["wp:featuredmedia"][0].media_details.sizes.medium_large.source_url;
 
-    featuredCopy.querySelector(".featured-paragraph").innerHTML = featuredEvent.press_release;
+    const description = featuredCopy.querySelector(".featured-paragraph");
+    if (description) {
+        description.innerHTML = featuredEvent.press_release;
+    }
+    
+    const a = featuredCopy.querySelector('.read-more');
+    if (a) {
+        a.href += featuredEvent.id;
+    }
     
     document.querySelector(".featuredMain").appendChild(featuredCopy);
 

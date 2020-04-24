@@ -15,7 +15,10 @@
 }
 
 body {
+  margin: 0;
+  padding: 0;
   font-family: "DalaFlodaWeb-RomanNo-2";
+  overflow-x: hidden;
 }
 
 /* Navbar */
@@ -183,9 +186,81 @@ body {
     color: #EE6648;
 }
 
+/* Featured Events */
+
+.hide {
+  display: none;
+}
+
+.featured-heading {
+  padding: 2em 1em 1em;
+  margin: auto;
+  text-align: center;
+}
+
+.featuredMain {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.featuredEvent {
+  border-radius: 50px 50px 0 0;
+  margin-bottom: 2em;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  width: 80vw;
+}
+
+.featured-img-event {
+  border-radius: 50px 50px 0 0;
+  width: 80vw;
+}
+
+.featured-container {
+  font-family: "Times New Roman", Times, serif;
+  padding: 1em;
+}
+
+.featured-paragraph {
+  font-size: 1em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  word-spacing: 5px;
+}
+
+.featured-title {
+  font-family: "DalaFlodaWeb-RomanNo-2";
+  font-size: 1.7em;
+}
+
+.featured-artist {
+  color: #EE6648;
+  font-size: 1.2em;
+}
+
+.featured-dates {
+  padding: .5em 0;
+  font-size: 0.8em;
+}
+
+.read-more {
+  color: #EE6648;
+  float: right;
+  padding: 1em 0;
+}
+
+.arrow-read {
+  line-height: 10px;
+}
+
 /* Media Queries */
 
 @media screen and (min-width: 768px) {
+  /* Navigation */
   .navbar {
     overflow: visible;
     position: inherit;
@@ -230,5 +305,32 @@ body {
   .logo:hover,
   .nav-links:hover {
     color: #EE6648;
+  }
+
+  /* Featured Events */
+  .featuredEvent {
+    display: flex;
+    border-radius: 50px 50px 0 0;
+    max-width: 60vw;
+    max-height: 40vh;
+  }
+  
+  .featuredEvent:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+
+  .featured-img-event {
+    border-radius: 50px 0 0 0;
+    max-width: 30vw;
+    height: 40vh;
+    object-fit: cover;
+  }
+
+  .featured-container {
+    padding: 2em;
+  }
+
+  .featured-paragraph {
+    -webkit-line-clamp: 7;
   }
 }

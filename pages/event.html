@@ -32,7 +32,7 @@
           <a href="../index.html" class="nav-links">Home</a>
         </li>
         <li>
-          <a href="art-guide.html" class="nav-links active-link">Art Guide</a>
+          <a href="art-guide.html" class="nav-links">Art Guide</a>
         </li>
         <li>
           <a href="contact-us.html" class="nav-links">Contact Us</a>
@@ -46,29 +46,33 @@
       </ul>
     </nav>
 
-    <div class="thumbnail">
-      <img src="https://images.unsplash.com/photo-1550432136-d88383c51016?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1973&q=80">
-    </div>
-
   <main class="eventsMain"></main>
   <template class="events-template">
-    <article class="eventsEvent">
-      <figure class="events-figure-img"><img src="" alt="" class="events-img-event"></figure>
-      <div class="events-container">
-        <p class="events-title">title</p>
-        <p class="events-artist">artist</p>
-        <p class="events-dates"><span class="fetched"><span class="events-date">date</span>
+    <figure class="thumbnail"><img src="" alt="" class="events-img-thumbnail event-image"></figure>
+    <figure class="hide"><img src="" alt="" class="events-img-event event-image"></figure>
+    <article class="eventsEvent oneEvent">
+      <div class="events-container container">
+        <p class="events-title title">title</p>
+        <p class="events-artist artist">artist</p>
+        <p class="events-dates dates"><span class="fetched"><span class="events-date">date</span>
             <span class="twoDates"> /
               <span class="events-date-to">toDate</span>
             </span>
           </span>
         </p>
-        <div class="events-paragraph">paragraph</div>
+        <div class="events-paragraph paragraph">paragraph</div>
+        <p class="events-prices prices"><span class="fetched"><span class="events-price">price</span>DKK
+            <span class="twoPrices"> -
+              <span class="events-prices-to">toPrice</span>DKK
+            </span>
+          </span>
+        </p>
         <a href="event.html?event_id=" class="read-more hide">Read more --></a>
       </div>
     </article>
   </template> 
-
+  
+  <a class="back">Go Back</a>
   <script src="../js/eventslist.js"></script>
   <script src="../js/script.js"></script>
 </body>

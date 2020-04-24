@@ -6,3 +6,10 @@ navBarToggle.addEventListener("click", function() {
   mainNav.classList.toggle("active");
   nav.classList.toggle("active-overflow");
 });
+
+const backButton = document.querySelector(".back");
+backButton.addEventListener("click", goBack);
+
+function goBack() {
+    window.history.back();
+  }

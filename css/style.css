@@ -2,11 +2,11 @@
 
 @font-face {
   font-family: 'Dala Moa';
-  src: url('DalaMoa.eot');
+  src: url('Dala Moa/DalaMoa.eot');
   src: local('Dala Moa'), local('DalaMoa'),
-      url('DalaMoa.eot?#iefix') format('embedded-opentype'),
-      url('DalaMoa.woff') format('woff'),
-      url('DalaMoa.ttf') format('truetype');
+      url('Dala Moa/DalaMoa.eot?#iefix') format('embedded-opentype'),
+      url('Dala Moa/DalaMoa.woff') format('woff'),
+      url('Dala Moa/DalaMoa.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -220,6 +220,7 @@ body {
   border-radius: 40px 40px 0 0;
   height: 30vh;
   width: 80vw;
+  object-fit: cover;
 }
 
 .featured-container, .events-container {

@@ -1,6 +1,6 @@
 window.addEventListener('DOMContentLoaded', getData);
 
-const linkEvents = "http://colorless.in/wordpress-portfolio/kai/wp-json/wp/v2/event?_embed";
+const linkEvents = "http://colorless.in/wordpress-portfolio/kai/wp-json/wp/v2/event?_embed&per_page=100";
 
 function getData() {
 
@@ -132,6 +132,7 @@ function formatDate(d) {
 //////Calendar End///////
 
 function handleData(eventEvents) {
+    console.log(eventEvents)
     // Filter out current events and show them first thing
     var currentEvents = eventEvents.filter(function (b) {
         var today = new Date();
@@ -202,7 +203,7 @@ function handleData(eventEvents) {
         dates.sort((a, b) => a.valueOf() - b.valueOf());
         
         //Compare event dates with calendar to get events
-        var hitDateMatches = dates.filter(function(date) { var newDate = date.getFullYear() + "-" + date.getMonth() + "-" + date.getDate(); var newStart = selectedDate.getFullYear() + "-" + selectedDate.getMonth() + "-" + selectedDate.getDate(); return newDate.toString() == newStart.toString()}); console.log(hitDateMatches);
+        var hitDateMatches = dates.filter(function(date) { var newDate = date.getFullYear() + "-" + date.getMonth() + "-" + date.getDate(); var newStart = selectedDate.getFullYear() + "-" + selectedDate.getMonth() + "-" + selectedDate.getDate(); return newDate.toString() == newStart.toString()}); //console.log(hitDateMatches);
 
         
         return hitDateMatches.length>0;

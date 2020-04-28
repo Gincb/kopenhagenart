@@ -1,11 +1,15 @@
 /* Font */
 
 @font-face {
-    font-family: 'DalaFlodaWeb-RomanNo-2';
-    src: url('DalaFloda/DalaFlodaWeb-RomanNo-2.eot?#iefix') format('embedded-opentype'),  url('DalaFloda/DalaFlodaWeb-RomanNo-2.woff') format('woff'), url('DalaFloda/DalaFlodaWeb-RomanNo-2.ttf')  format('truetype'), url('DalaFloda/DalaFlodaWeb-RomanNo-2.svg#DalaFlodaWeb-RomanNo.2') format('svg');
-    font-weight: normal;
-    font-style: normal;
-  }
+  font-family: 'Dala Moa';
+  src: url('DalaMoa.eot');
+  src: local('Dala Moa'), local('DalaMoa'),
+      url('DalaMoa.eot?#iefix') format('embedded-opentype'),
+      url('DalaMoa.woff') format('woff'),
+      url('DalaMoa.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
   
 
 * {
@@ -17,7 +21,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: "DalaFlodaWeb-RomanNo-2";
+  font-family: 'Dala Moa';
   overflow-x: hidden;
 }
 
@@ -234,7 +238,7 @@ body {
 }
 
 .featured-title, .events-title {
-  font-family: "DalaFlodaWeb-RomanNo-2";
+  font-family: 'Dala Moa';
   font-size: 1.7em;
 }
 
@@ -325,7 +329,7 @@ body {
 .date-picker {
   cursor: pointer;
   position: relative;
-  margin: 2em 5em;
+  margin: 2em auto;
   width: 100%;
   max-width: 320px;
   background-color: white;
@@ -405,6 +409,25 @@ body {
   background-color: white;
   color: #EE6648;
   border: 1px solid #EE6648;
+}
+
+/* Calendar filter buttons */
+
+.showPast, .showAll, .showCurrent {
+  cursor: pointer;
+  margin: 1em auto;
+  padding: .1em;
+  background-color: white;
+  color: #EE6648;
+  border: 1px solid white;
+  transition: ease-in .3s;
+}
+
+.showPast:hover, .showAll:hover, .showCurrent:hover {
+  background-color: #EE6648;
+  color: white;
+  border: 1px solid white;
+  transition: ease-in .3s;
 }
 
 /* Media Queries */

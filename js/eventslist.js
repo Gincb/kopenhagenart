@@ -132,15 +132,60 @@ function formatDate(d) {
 //////Calendar End///////
 
 function handleData(eventEvents) {
-    eventEvents.forEach(showEventList);
-    const dateBtn = document.querySelector(".days");
-    dateBtn.addEventListener("click", changeDate)
+    // Filter out current events and show them first thing
+    var currentEvents = eventEvents.filter(function (b) {
+        var today = new Date();
+        var oldDate = new Date(b.event_date_to);
 
+        var passedDateMatches = today < oldDate; //compare todays date with events ending date
+
+        return passedDateMatches;
+    });
+
+    currentEvents.forEach(showEventList);
+
+    // Added button to come back to current events
+    const showCurrentBtn = document.querySelector(".showCurrent");
+    showCurrentBtn.addEventListener("click", function(e){
+            document.querySelector(".eventsMain").innerHTML="";
+            currentEvents.forEach(showEventList);
+        })
+
+    // Filter events that already passed and show them on button click
+    const pastDateBtn = document.querySelector(".showPast");
+    pastDateBtn.addEventListener("click", showPastEvents);
+
+    function showPastEvents(){
+        var pastEvents = eventEvents.filter(function (c) {
+            var today = new Date();
+            var pastDate = new Date(c.event_date_to);
+            var pastDateFrom = new Date(c.event_date);
+    
+            var pastDateMatch = today > pastDate || (today > pastDateFrom && pastDate == 'Invalid Date'); //compare todays date with events ending date and one day events
+    
+            return pastDateMatch;
+        });
+        document.querySelector(".eventsMain").innerHTML="";
+        pastEvents.forEach(showEventList);
+    }
+
+    // Show All events in database
+    const showAllBtn = document.querySelector(".showAll");
+        showAllBtn.addEventListener("click", function(e){
+            document.querySelector(".eventsMain").innerHTML="";
+            eventEvents.forEach(showEventList);
+        })
+
+    const dateBtn = document.querySelector(".days");
+    dateBtn.addEventListener("click", changeDate);
+
+    //Filter dates when interacting with calendar, show specific date events
     function changeDate(){
         var resultProductData = eventEvents.filter(function (a) {
         var hitDates = [a.event_date, a.event_date_to] || {};
-        hitDates = hitDates.map(function(date) { return new Date(date); });
+        hitDates = hitDates.map(function(date) { return new Date(date); }); //make array of dates from database (event start and end array)
 
+        //Function to make an array of dates calculating from event start to end, to compare with calendars date
         var getDateArray = function(start, end) {
             var arr = new Array();
             var dt = new Date(start);
@@ -152,8 +197,11 @@ function handleData(eventEvents) {
         }
         
         var dates = getDateArray(hitDates[0], hitDates[1]);
+
+        //Sort array of dates from newest to oldest
+        dates.sort((a, b) => a.valueOf() - b.valueOf());
         
-        
+        //Compare event dates with calendar to get events
         var hitDateMatches = dates.filter(function(date) { var newDate = date.getFullYear() + "-" + date.getMonth() + "-" + date.getDate(); var newStart = selectedDate.getFullYear() + "-" + selectedDate.getMonth() + "-" + selectedDate.getDate(); return newDate.toString() == newStart.toString()}); console.log(hitDateMatches);
 
         
@@ -163,15 +211,7 @@ function handleData(eventEvents) {
 
         document.querySelector(".eventsMain").innerHTML="";
         resultProductData.forEach(showEventList);
-        
-        const showAllBtn = document.querySelector(".showAll");
-        showAllBtn.addEventListener("click", function(e){
-            document.querySelector(".eventsMain").innerHTML="";
-            eventEvents.forEach(showEventList);
-        })
     }
-
-    
 }
 
 function showEventList(eventList) {

@@ -213,6 +213,50 @@ function handleData(eventEvents) {
         document.querySelector(".eventsMain").innerHTML="";
         resultProductData.forEach(showEventList);
     }
+
+    //ARTISTS
+    const myArtists = [...new Set(eventEvents.map(x=>x.artist))]; //Get unique values
+    
+    myArtists.forEach(function(artist) {
+        const o = document.createElement("option");
+        o.setAttribute("value", `${artist}`);
+        o.setAttribute("class", `artists`);
+        o.textContent = `${artist}`;
+        document.querySelector("#artists").appendChild(o);
+    });
+
+    const artistBtns = document.querySelector("#artists");
+    artistBtns.addEventListener("change", filterArtists);
+
+    function filterArtists(e) {
+        console.log(e);
+        const resultArtists = eventEvents.filter(artist => artist.artist === e.target.value);
+        document.querySelector(".eventsMain").innerHTML="";
+        resultArtists.forEach(showEventList);
+        document.getElementById("venue").selectedIndex = 0;
+    }
+    
+    //VENUE
+    const myVenues = [...new Set(eventEvents.map(x=>x.venue))]; //Get unique values
+
+    myVenues.forEach(function(venue) {
+        const o = document.createElement("option");
+        o.setAttribute("value", `${venue}`);
+        o.setAttribute("class", `venue`);
+        o.textContent = `${venue}`;
+        document.querySelector("#venue").appendChild(o);
+    });
+
+    const venueBtns = document.querySelector("#venue");
+    venueBtns.addEventListener("change", filterVenue);
+
+    function filterVenue(e) {
+        console.log(e);
+        const resultVenue = eventEvents.filter(venue => venue.venue === e.target.value);
+        document.querySelector(".eventsMain").innerHTML="";
+        resultVenue.forEach(showEventList);
+        document.getElementById("artists").selectedIndex = 0;
+    }
 }
 
 function showEventList(eventList) {

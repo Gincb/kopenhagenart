@@ -42,23 +42,38 @@
     </div>
 
     <!-- DATE PICKER -->
-
-    <div class="date-picker">
-      <div class="selected-date"></div>
-      
-      <div class="dates">
-        <div class="months">
-          <div class="arrows prev-month"><i class="fas fa-angle-left"></i></div>
-          <div class="month"></div>
-          <div class="arrows next-month"><i class="fas fa-angle-right"></i></div>
+    <div class="filters">
+      <div class="date-picker">
+        <div class="selected-date"></div>
+        
+        <div class="dates">
+          <div class="months">
+            <div class="arrows prev-month"><i class="fas fa-angle-left"></i></div>
+            <div class="month"></div>
+            <div class="arrows next-month"><i class="fas fa-angle-right"></i></div>
+          </div>
+          
+          <div class="days"></div>
+          <button class="showCurrent">Current Events</button>
+          <button class="showAll">Show All</button>
+          <button class="showPast">Past Events</button>
         </div>
         
-        <div class="days"></div>
-        <button class="showCurrent">Current Events</button>
-        <button class="showAll">Show All</button>
-        <button class="showPast">Past Events</button>
       </div>
       
+      <div class="event-filters">
+        <div class="dropdown-menu">
+          <select id="artists" name="artists">
+            <option>Choose your artist</option>
+          </select>
+        </div>
+
+        <div class="dropdown-menu">
+        <select id="venue" name="venue" data-placeholder="Choose your artist">
+          <option>Choose your venue</option>
+        </select>
+        </div>
+      </div>
     </div>
 
   <h1 class="events-heading">Events</h1>

@@ -263,7 +263,11 @@ a{
 .featured-dates, .events-dates {
   color: gray;
   padding: .5em 0;
-  font-size: 0.8em;
+  font-size: 1em;
+}
+
+.text-center {
+  text-align: center;
 }
 
 .read-more {
@@ -284,6 +288,7 @@ a{
 /* One Event */
 
 .oneEvent {
+  margin: 2em 0 0;
   height: auto;
 }
 
@@ -546,6 +551,20 @@ select:focus {
   color: white;
 }
 
+.email-arrow, .event-arrow {
+  width: 20vw;
+}
+
+.arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mobile-hide {
+  display: none;
+}
+
 /* Media Queries */
 
 @media only screen and (min-width: 768px) {
@@ -603,6 +622,14 @@ select:focus {
 
   /* Events */
 
+  .text-center {
+    text-align: left;
+  }
+
+  .mobile-hide {
+    display:  -webkit-box;
+  }
+
   .paragraph {
     font-size: 1.5em;
   }
@@ -629,6 +656,10 @@ select:focus {
     font-size: 1.1em;
   }
 
+  .email-arrow, .event-arrow {
+    width: 15vw;
+  }
+
 }
 
 @media screen and (min-width: 992px) {
@@ -653,7 +684,7 @@ select:focus {
   }
 
   .featured-paragraph, .events-paragraph {
-    -webkit-line-clamp: 7;
+    -webkit-line-clamp: 10;
   }
 
   /* Events List */
@@ -714,8 +745,12 @@ select:focus {
 
   /* Text for Contacts Us and Newsletter */
 
-  .contacts-paragraph, .newsletter-paragraph {
+  .contacts-paragraph {
     margin: 2em 15em;
+  }
+
+  .newsletter-paragraph {
+    margin: 2em 20em;
   }
 
   .email-input {
@@ -726,6 +761,10 @@ select:focus {
     width: 10vw;
     margin: 1em;
     font-size: 1.1em;
+  }
+
+  .email-arrow, .event-arrow {
+    width: 5vw;
   }
   
 }

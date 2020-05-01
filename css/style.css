@@ -25,6 +25,10 @@ body {
   overflow-x: hidden;
 }
 
+a{
+  text-decoration: none;
+}
+
 /* Navbar */
 
 .navbar {
@@ -32,7 +36,6 @@ body {
     position: relative;
     font-size: 18px;
     border: 1px solid rgba(0, 0, 0, 0.2);
-    padding-bottom: 10px;
 }
 
 .navbar-list {
@@ -66,8 +69,17 @@ body {
 .logo {
   display: inline-block;
   font-size: 22px;
-  margin-top: 10px;
-  margin-left: 20px;
+}
+
+.logo img {
+  margin: 0;
+  padding: 0;
+  height: 50px;
+}
+
+.search {
+  height: 50px;
+  margin: 0;
 }
 
 .navbar-toggle {
@@ -196,7 +208,7 @@ body {
   display: none;
 }
 
-.featured-heading, .events-heading {
+.featured-heading, .events-heading, .contacts-heading, .newsletter-heading {
   padding: 2em 1em 1em;
   margin: auto;
   text-align: center;
@@ -319,7 +331,6 @@ body {
 
 .thumbnail img{
   display: block;
-  padding-bottom: 2em;
   width: 100vw;
   height: 30vh;
   object-fit: cover;
@@ -330,16 +341,16 @@ body {
 
 .filters {
   display: grid;
-  grid-template-columns: auto 40vw 40vw auto;
+  grid-template-columns: auto 80vw auto;
   grid-template-rows: auto;
-  grid-template-areas: ". calendar filters .";
+  grid-template-areas: ". calendar ." ". filters .";
 }
 
 .date-picker {
   grid-area: calendar;
   cursor: pointer;
   position: relative;
-  margin: 2em auto;
+  margin: auto;
   width: 100%;
   max-width: 320px;
   background-color: white;
@@ -443,7 +454,7 @@ body {
 /* Filter selects */
 .event-filters {
   grid-area: filters;
-  margin: 2em auto;
+  margin: auto;
 }
 
 select {
@@ -456,7 +467,7 @@ select {
   font-family: "Times New Roman", Times, serif;
   line-height: 1.5em;
   padding: 0.5em 3.5em 0.5em 1em;
-  width: 30vw;
+  width: 80vw;
   margin: 0;      
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -471,7 +482,7 @@ select:focus {
 .dropdown-menu {
   position: relative;
   overflow: hidden;
-  max-width: 30vw;
+  max-width: 80vw;
   border-radius: 3px;
   margin: 2em 0;
 }
@@ -488,6 +499,53 @@ select:focus {
   pointer-events: none;
 }
 
+/* Paragraphs - Contact Us and Newsletter */
+
+.email-link {
+  color: #EE6648;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.contacts-paragraph, .newsletter-paragraph {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1.2em;
+  margin: 2em;
+}
+
+.newsletter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+}
+
+.email-input {
+  width: 90vw;
+  border: 1.5px solid #EE6648;
+  border-radius: 10px;
+  padding: 5px;
+  text-align: center;
+}
+
+.email-button {
+  width: 20vw;
+  margin: 2em auto;
+  padding: 5px;
+  color: white;
+  background-color: #EE6648;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.email-button a {
+  color: white;
+}
+
 /* Media Queries */
 
 @media only screen and (min-width: 768px) {
@@ -497,7 +555,6 @@ select:focus {
     position: inherit;
     display: flex;
     justify-content: space-between;
-    padding-bottom: 0;
     height: 70px;
     align-items: center;
   }
@@ -511,6 +568,7 @@ select:focus {
     margin-top: 0;
     flex-direction: row;
     justify-content: flex-end;
+    align-items: center;
   }
 
   .navbar-list li {
@@ -527,8 +585,13 @@ select:focus {
 
   .logo {
     margin-top: 0;
+    margin-left: 20px;
   }
 
+  .logo img {
+    height: 70px;
+  }
+  
   .navbar-toggle {
     display: none;
   }
@@ -536,6 +599,34 @@ select:focus {
   .logo:hover,
   .nav-links:hover {
     color: #EE6648;
+  }
+
+  /* Events */
+
+  .paragraph {
+    font-size: 1.5em;
+  }
+
+  /* Text for Contacts Us and Newsletter */
+
+  .contacts-paragraph, .newsletter-paragraph {
+    font-size: 1.5em;
+    margin: 2em 5em;
+  }
+
+  .newsletter {
+    flex-wrap: nowrap;
+    margin: auto 5em;
+  }
+  
+  .email-input {
+    width: 50vw;
+  }
+  
+  .email-button {
+    width: 15vw;
+    margin: 1em;
+    font-size: 1.1em;
   }
 
 }
@@ -548,10 +639,6 @@ select:focus {
     border-radius: 50px 50px 0 0;
     max-width: 70vw;
     max-height: 40vh;
-  }
-  
-  .featuredEvent:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   }
 
   .featured-img-event {
@@ -603,4 +690,42 @@ select:focus {
   .dates {
     text-align: left;
   }
+
+  .paragraph {
+    font-size: 1.2em;
+  }
+
+  /* Calendar */
+
+  .filters {
+    display: grid;
+    grid-template-columns: auto 40vw 40vw auto;
+    grid-template-rows: auto;
+    grid-template-areas: ". calendar filters .";
+  }
+
+  select {
+    width: 30vw;
+  }
+
+  .dropdown-menu {
+    max-width: 30vw;
+  }
+
+  /* Text for Contacts Us and Newsletter */
+
+  .contacts-paragraph, .newsletter-paragraph {
+    margin: 2em 15em;
+  }
+
+  .email-input {
+    width: 35vw;
+  }
+  
+  .email-button {
+    width: 10vw;
+    margin: 1em;
+    font-size: 1.1em;
+  }
+  
 }

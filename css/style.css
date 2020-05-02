@@ -565,6 +565,21 @@ select:focus {
   display: none;
 }
 
+/*ADS*/
+
+.ads {
+    padding: 5vh;
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ads a {
+    padding-left: 1vh;
+    padding-right: 1vh;
+}
+
 /* Media Queries */
 
 @media only screen and (min-width: 768px) {

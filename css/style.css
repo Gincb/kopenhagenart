@@ -606,6 +606,7 @@ footer {
     padding: 5vh;
     text-align: center;
     line-height: 2em;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 footer h3 {
@@ -613,7 +614,7 @@ footer h3 {
     text-transform: uppercase;
     padding-bottom: 1em;
     font-weight: 200;
-
+    font-family: 'Dala Moa';
 }
 
 .some-container {

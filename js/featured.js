@@ -7,7 +7,7 @@ function getData() {
     const urlParams = new URLSearchParams(window.location.search);
     const the_featured_id = urlParams.get("featured_id");
 
-    if(the_featured_id) {
+    if (the_featured_id) {
         fetch("http://colorless.in/wordpress-portfolio/kai/wp-json/wp/v2/event/" + the_featured_id + "?_embed")
             .then(res => res.json())
             .then(showFeaturedEvent)
@@ -25,7 +25,7 @@ function handleData(featuredEvents) {
 
 function showFeaturedEvent(featuredEvent) {
     console.log(featuredEvent);
-    
+
     const featuredTemplate = document.querySelector(".featured-template").content;
     const featuredCopy = featuredTemplate.cloneNode(true); // made copy
 
@@ -34,7 +34,7 @@ function showFeaturedEvent(featuredEvent) {
     featuredCopy.querySelector(".featured-date").textContent = featuredEvent.event_date;
     featuredCopy.querySelector(".featured-date-to").textContent = featuredEvent.event_date_to;
 
-    if(featuredEvent.event_date_to == false) {
+    if (featuredEvent.event_date_to == false) {
         featuredCopy.querySelector(".twoDates").classList.add("hide"); // Hide if there is no second date
     }
 
@@ -44,12 +44,12 @@ function showFeaturedEvent(featuredEvent) {
     if (description) {
         description.innerHTML = featuredEvent.press_release;
     }
-    
+
     const a = featuredCopy.querySelector('.read-more');
     if (a) {
         a.href += featuredEvent.id;
     }
-    
+
     document.querySelector(".featuredMain").appendChild(featuredCopy);
 
 }

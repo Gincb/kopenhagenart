@@ -9,107 +9,118 @@
     <!-- FA -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
     <script src="https://kit.fontawesome.com/8a223d976c.js" crossorigin="anonymous"></script>
-    
+
     <title>Art Guide</title>
 </head>
+
 <body>
     <!-- Navbar -->
-  <nav class="navbar">
-      <span class="navbar-toggle" id="js-navbar-toggle">
-        <i class="fas fa-bars"></i>
-      </span>
-      <a href="#" class="logo"><img src="../assets/artguide-white.png" alt="Logo"></a>
-      <ul class="navbar-list" id="js-menu">
-        <li>
-          <a href="../index.html" class="nav-links">Home</a>
-        </li>
-        <li>
-          <a href="art-guide.html" class="nav-links active-link">Art Guide</a>
-        </li>
-        <li>
-          <a href="contact-us.html" class="nav-links">Contact Us</a>
-        </li>
-        <li>
-          <a href="newsletter.html" class="nav-links">Newsletter</a>
-        </li>
-        <li>
-          <a href="#" class="nav-links active-link"><img src="../assets/search-icon-04.svg" class="search" alt="Search"></a>
-        </li>
-      </ul>
+    <nav class="navbar">
+        <span class="navbar-toggle" id="js-navbar-toggle">
+            <i class="fas fa-bars"></i>
+        </span>
+        <a href="#" class="logo"><img src="../assets/artguide-white.png" alt="Logo"></a>
+        <ul class="navbar-list" id="js-menu">
+            <li>
+                <a href="../index.html" class="nav-links">Home</a>
+            </li>
+            <li>
+                <a href="art-guide.html" class="nav-links active-link">Art Guide</a>
+            </li>
+            <li>
+                <a href="contact-us.html" class="nav-links">Contact Us</a>
+            </li>
+            <li>
+                <a href="newsletter.html" class="nav-links">Newsletter</a>
+            </li>
+            <li>
+                <a href="#" class="nav-links active-link"><img src="../assets/search-icon-04.svg" class="search" alt="Search"></a>
+            </li>
+        </ul>
     </nav>
 
     <div class="thumbnail">
-      <img src="https://images.unsplash.com/photo-1550432136-d88383c51016?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1973&q=80">
+        <img src="https://images.unsplash.com/photo-1550432136-d88383c51016?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1973&q=80">
     </div>
 
     <!-- DATE PICKER -->
     <div class="filters">
-      <div class="date-picker">
-        <div class="selected-date"></div>
-        
-        <div class="dates">
-          <div class="months">
-            <div class="arrows prev-month"><i class="fas fa-angle-left"></i></div>
-            <div class="month"></div>
-            <div class="arrows next-month"><i class="fas fa-angle-right"></i></div>
-          </div>
-          
-          <div class="days"></div>
-          <button class="showCurrent">Current Events</button>
-          <button class="showAll">Show All</button>
-          <button class="showPast">Past Events</button>
-        </div>
-        
-      </div>
-      
-      <div class="event-filters">
-        <div class="dropdown-menu">
-          <select id="artists" name="artists">
-            <option>Choose your artist</option>
-          </select>
+        <div class="date-picker">
+            <div class="selected-date"></div>
+
+            <div class="dates">
+                <div class="months">
+                    <div class="arrows prev-month"><i class="fas fa-angle-left"></i></div>
+                    <div class="month"></div>
+                    <div class="arrows next-month"><i class="fas fa-angle-right"></i></div>
+                </div>
+
+                <div class="days"></div>
+                <button class="showCurrent">Current Events</button>
+                <button class="showAll">Show All</button>
+                <button class="showPast">Past Events</button>
+            </div>
+
         </div>
 
-        <div class="dropdown-menu">
-        <select id="venue" name="venue" data-placeholder="Choose your artist">
-          <option>Choose your venue</option>
-        </select>
+        <div class="event-filters">
+            <div class="dropdown-menu">
+                <select id="artists" name="artists">
+                    <option>Choose your artist</option>
+                </select>
+            </div>
+
+            <div class="dropdown-menu">
+                <select id="venue" name="venue" data-placeholder="Choose your artist">
+                    <option>Choose your venue</option>
+                </select>
+            </div>
         </div>
-      </div>
     </div>
 
-  <h1 class="events-heading">Events</h1>
-  <main class="eventsMain"></main>
-  <template class="events-template">
-    <article class="eventsEvent">
-      <figure class="events-figure-img"><img src="" alt="" class="events-img-event"></figure>
-      <figure class="thumbnail hide"><img src="" alt="" class="events-img-thumbnail"></figure>
-      <div class="events-container">
-        <p class="events-title title">title</p>
-        <p class="events-artist artist">artist</p>
-        <p class="events-dates dates"><span class="fetched"><span class="events-date">date</span>
-            <span class="twoDates"> /
-              <span class="events-date-to">toDate</span>
-            </span>
-          </span>
-        </p>
-        <div class="events-paragraph  mobile-hide">paragraph</div>
-        <p class="events-prices hide"><span class="fetched"><span class="events-price">price</span>
-          <span class="twoPrices"> -
-            <span class="events-prices-to">toPrice</span>
-          </span>
-        </span>
-      </p>
-        <a href="event.html?event_id=" class="read-more">Read more &rarr;</a>
-      </div>
-    </article>
-  </template> 
- <section class="ads">
-       <a href="http://www.kunstskolenspektrum.dk/"><img src="../assets/ads/Spektrum_04_16_2.gif" alt="spektrum"></a>
-       <a href="https://www.kunsthojskolen.dk/"><img src="../assets/ads/kunsthojskolen_200x100_03.gif" alt="kunsthojskolen"></a>
-       <a href="https://lilithperformancestudio.com/"><img src="../assets/ads/lilith2020.gif" alt="lilith"></a>
-       <a href="https://www.københavnskunstskole.dk/"><img src="../assets/ads/KK_0417.gif" alt="kk"></a>
-  </section>
-  <script src="../js/eventslist.js"></script>
-  <script src="../js/script.js"></script>
-</body>
-</html>
+    <h1 class="events-heading">Events</h1>
+    <main class="eventsMain"></main>
+    <template class="events-template">
+        <article class="eventsEvent">
+            <figure class="events-figure-img"><img src="" alt="" class="events-img-event"></figure>
+            <figure class="thumbnail hide"><img src="" alt="" class="events-img-thumbnail"></figure>
+            <div class="events-container">
+                <p class="events-title title">title</p>
+                <p class="events-artist artist">artist</p>
+                <p class="events-dates dates"><span class="fetched"><span class="events-date">date</span>
+                        <span class="twoDates"> /
+                            <span class="events-date-to">toDate</span>
+                        </span>
+                    </span>
+                </p>
+                <div class="events-paragraph  mobile-hide">paragraph</div>
+                <p class="events-prices hide"><span class="fetched"><span class="events-price">price</span>
+                        <span class="twoPrices"> -
+                            <span class="events-prices-to">toPrice</span>
+                        </span>
+                    </span>
+                </p>
+                <a href="event.html?event_id=" class="read-more">Read more &rarr;</a>
+            </div>
+        </article>
+    </template>
+    <section class="ads">
+        <a href="http://www.kunstskolenspektrum.dk/"><img src="../assets/ads/Spektrum_04_16_2.gif" alt="spektrum"></a>
+        <a href="https://www.kunsthojskolen.dk/"><img src="../assets/ads/kunsthojskolen_200x100_03.gif" alt="kunsthojskolen"></a>
+        <a href="https://lilithperformancestudio.com/"><img src="../assets/ads/lilith2020.gif" alt="lilith"></a>
+        <a href="https://www.københavnskunstskole.dk/"><img src="../assets/ads/KK_0417.gif" alt="kk"></a>
+    </section>
+    <footer>
+        <h3>Follow us</h3>
+        <section class="some-container">
+            <a class="some-icons" href="https://www.facebook.com/kopenhagen.dk/"><img src="../assets/some-icons/facebook-kph-05.svg" alt="spektrum"></a>
+            <a class="some-icons" href="https://www.instagram.com/kopenhagendk/"><img src="../assets/some-icons/instagram-kph-06.svg" alt="kunsthojskolen"></a>
+        </section>
+        <h3>Contact</h3>
+        <a class="footer-links" href="mailto:kopenhagen@kopenhagen.dk">kopenhagen@kopenhagen.dk</a>
+        <address>Oehlenschlægersgade 60, 1663 København V</address>
+        <p>Contact regarding art guide, advertising, and visibility: <a class="footer-links" href="mailto:sales@kopenhagen.dk">sales@kopenhagen.dk</a></p>
+    </footer>
+    <script src="../js/eventslist.js"></script>
+    <script src="../js/script.js"></script>
+</body></html>

@@ -220,6 +220,37 @@ function handleData(eventEvents) {
         resultProductData.forEach(showEventList);
     }
 
+    //AREAS
+    const myAreas = [...new Set(eventEvents.map(x => {
+        if (!x.location) {
+            return "";
+        }
+        let parts = x.location.split(',');
+        let lastPart = parts[parts.length-1];
+        // Remove postal code from beginning of area (0-9 and ' ' characters)
+        return lastPart.replace(/^[0-9 ]*/, '');
+    }))];
+    myAreas.sort();
+
+    myAreas.forEach(area => {
+        const o = document.createElement("option");
+        o.setAttribute("value", `${area}`);
+        o.setAttribute("class", `areas`);
+        o.textContent = `${area}`;
+        document.querySelector("#areas").appendChild(o);
+    });
+
+    const areaBtns = document.querySelector("#areas");
+    areaBtns.addEventListener("change", filterAreas);
+
+    function filterAreas(e) {
+        const resultAreas = eventEvents.filter(evnt => evnt.location.indexOf(e.target.value) > -1);
+        document.querySelector(".eventsMain").innerHTML = "";
+        resultAreas.forEach(showEventList);
+        document.getElementById("artists").selectedIndex = 0;
+        document.getElementById("venue").selectedIndex = 0;
+    }
+
     //ARTISTS
     const myArtists = [...new Set(eventEvents.map(x => x.artist))]; //Get unique values
 
@@ -239,6 +270,7 @@ function handleData(eventEvents) {
         const resultArtists = eventEvents.filter(artist => artist.artist === e.target.value);
         document.querySelector(".eventsMain").innerHTML = "";
         resultArtists.forEach(showEventList);
+        document.getElementById("areas").selectedIndex = 0;
         document.getElementById("venue").selectedIndex = 0;
     }
 
@@ -261,6 +293,7 @@ function handleData(eventEvents) {
         const resultVenue = eventEvents.filter(venue => venue.venue === e.target.value);
         document.querySelector(".eventsMain").innerHTML = "";
         resultVenue.forEach(showEventList);
+        document.getElementById("areas").selectedIndex = 0;
         document.getElementById("artists").selectedIndex = 0;
     }
 }

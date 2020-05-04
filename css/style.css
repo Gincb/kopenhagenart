@@ -750,13 +750,16 @@ footer address {
         display: flex;
         border-radius: 50px 50px 0 0;
         max-width: 70vw;
+        min-height: 300px;
         max-height: 40vh;
+        overflow: hidden;
     }
 
     .featured-img-event {
         border-radius: 50px 0 0 0;
         max-width: 35vw;
-        height: 40vh;
+        min-height: 300px;
+        max-height: 40vh;
         object-fit: cover;
     }
 

@@ -599,9 +599,9 @@ select:focus {
     padding-right: 1vh;
 }
 
-/*FOOTER*/
+/*FOOTER MOBILE*/
 
-footer {
+.footer-mobile {
     background-color: #EDEDED;
     padding: 5vh;
     text-align: center;
@@ -609,7 +609,7 @@ footer {
     font-family: 'Times New Roman', Times, serif;
 }
 
-footer h3 {
+.footer-mobile h3 {
     font-size: 1.5em;
     text-transform: uppercase;
     padding-bottom: 1em;
@@ -633,9 +633,13 @@ footer address {
     font-style: normal;
 }
 
-.footer-links {
+.footer-mobile .footer-links {
     color: #EE6648;
 }
+
+ .footer-desktop{
+        display: none;
+    }
 
 /* Media Queries */
 
@@ -734,7 +738,9 @@ footer address {
     .event-arrow {
         width: 15vw;
     }
-
+    .footer-desktop{
+        display: none;
+    }
 }
 
 @media screen and (min-width: 992px) {
@@ -843,5 +849,59 @@ footer address {
     .event-arrow {
         width: 5vw;
     }
+
+       /*FOOTER DESKTOP*/
+    .footer-mobile{
+        display: none;
+    }
+
+    .footer-desktop {
+    background-color: #EDEDED;
+    padding: 5vh;
+    text-align:start;
+    line-height: 2em;
+    font-family: 'Times New Roman', Times, serif;
+    display: flex;
+        flex-direction: row;
+        justify-content:center;
+        flex-wrap: wrap;
+
+    }
+    .fotter-desktop-about, .footer-desktop-contact, .footer-desktop-follow {
+    width: 15vw;
+        margin-left: 5vw;
+        margin-right: 5vw;
+}
+    .footer-desktop-contact{
+        width: 20vw
+    }
+
+.footer-desktop h3 {
+    font-size: 1.5em;
+    text-transform: uppercase;
+    padding-bottom: 1em;
+    font-weight: 200;
+    font-family: 'Dala Moa';
+}
+
+.some-container {
+    display: flex;
+    justify-content:flex-start;
+    flex-wrap: wrap;
+    padding-bottom: 1.5em;
+}
+
+.some-icons {
+    width: 70px;
+    height: auto;
+}
+
+footer address {
+    font-style: normal;
+}
+
+.footer-desktop .footer-links {
+    color: #EE6648;
+}
 
 }

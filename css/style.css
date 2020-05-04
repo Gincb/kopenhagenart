@@ -766,7 +766,7 @@ footer address {
 
     .featured-paragraph,
     .events-paragraph {
-        -webkit-line-clamp: 10;
+        -webkit-line-clamp: 7;
     }
 
     /* Events List */

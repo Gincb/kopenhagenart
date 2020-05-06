@@ -103,7 +103,14 @@ a {
 }
 
 .active-link {
-    color: #EE6648;
+    padding: 0 25px;
+    background-image: url("../assets/stroke.png");
+    background-position: center;
+    background-size: cover;
+}
+
+.hover-link {
+    padding: 0 25px;
 }
 
 /* Carousel */
@@ -111,6 +118,7 @@ a {
     position: relative;
     width: 100%;
     margin: 3rem 0 1rem 0;
+    overflow: hidden;
 }
 
 .carousel-strip {
@@ -667,10 +675,6 @@ footer address {
         margin-top: 0;
     }
 
-    .nav-links {
-        margin-left: 40px;
-    }
-
     .logo {
         margin-top: 0;
         margin-left: 20px;
@@ -684,9 +688,15 @@ footer address {
         display: none;
     }
 
-    .logo:hover,
-    .nav-links:hover {
-        color: #EE6648;
+    .hover-link{
+        width: 100px;
+        background-image: url("../assets/stroke.png");
+        background-position: 0px 0px;
+    }
+    
+    .hover-link:hover {
+        background-position: center;
+        background-size: cover;
     }
 
     /* Events */

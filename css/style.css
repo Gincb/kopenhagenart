@@ -862,6 +862,12 @@ footer address {
         flex-wrap: wrap;
 
     }
+
+    .footer-desktop .info-icon {
+        display: block;
+        background: hotpink;
+    }
+
     .fotter-desktop-about, .footer-desktop-contact, .footer-desktop-follow {
     width: 15vw;
         margin-left: 5vw;

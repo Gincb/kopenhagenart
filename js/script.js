@@ -9,7 +9,7 @@ navBarToggle.addEventListener("click", function () {
 
 const backButton = document.querySelector(".back");
 if (backButton) {
-backButton.addEventListener("click", goBack);
+    backButton.addEventListener("click", goBack);
 }
 
 function goBack() {
